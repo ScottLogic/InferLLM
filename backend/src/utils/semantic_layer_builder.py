@@ -150,8 +150,14 @@ async def enrich_nodes_properties(llm, model, finalised_graph_structure):
     for new_node in enriched_node_properties["nodeProperties"]:
         label = new_node["label"]
         properties_to_add = new_node["properties"]
-
-        for node in finalised_graph_structure["nodes"]:
+        # Determine if the structure has nested 'nodes' or not
+        if isinstance(finalised_graph_structure["nodes"], dict):
+            # Nodes are nested under a "nodes" key in a dictionary in the case of OpenAI
+            node_list = finalised_graph_structure["nodes"]["nodes"]
+        else:
+            # Nodes are directly in the list in the case of Mistral
+            node_list = finalised_graph_structure["nodes"]
+        for node in node_list:
             if node["label"] == label:
                 if "properties" not in node:
                     node["properties"] = []
