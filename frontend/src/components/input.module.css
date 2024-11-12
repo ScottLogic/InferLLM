@@ -1,54 +1,141 @@
 .inputContainer {
   box-sizing: border-box;
-  display: inline-block;
-  margin: 1rem 0 2rem 0;
+  display: flex;
+  align-items: center;
   position: relative;
   width: 50%;
 }
 
-.input {
-  background-color: var(--border-primary);
-  border-radius: 8px;
-  border: none;
+.textarea {
+  flex: 1;
+  border-radius: 24px;
+  border: 1px solid var(--grey-500);
   box-sizing: border-box;
-  color: var(--text-color-primary);
-  font-size: 1rem;
-  height: 3rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--grey-100);
+  color: var(--grey-900);
+  font-size: 16px;
   outline: none;
-  padding: 0 34px 0 10px;
-  width: 100%;
+  resize: none;
+  padding: 12px 76px 12px 24px;
+  min-height: 48px;
+  max-height: 110px;
+  overflow-y: hidden;
 }
 
-.input:focus {
-  border: 1px solid var(--blue);
+.textarea:focus {
+  background-color: var(--grey-50);
+  border: 2px solid var(--grey-800);
+}
+
+.textarea:hover {
+  background-color: var(--grey-200);
+}
+
+.textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+}
+
+.textarea::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+.textarea::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+}
+
+textarea::placeholder {
+  color: var(--grey-700);
+  font-size: 16px;
+  line-height: 22px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.uploadButton_container {
+  background-color: transparent;
+  border-radius: 50%;
+  right: 64px;
+  height: 36px;
+  width: 36px;
+  margin-right: 16px;
+  position: absolute;
+}
+
+.uploadButton {
+  background: transparent;
+  color: var(--grey-900);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.uploadButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.uploadButton:hover {
+  background-color: var(--grey-300);
+}
+
+.uploadButton:active {
+  background-color: var(--grey-400);
+}
+
+.uploadButton_container.disabled {
+  color: var(--grey-900);
+  opacity: 0.5;
+}
+
+.uploadButton_container.disabled:hover {
+  color: var(--grey-900);
+  background-color: var(--grey-300);
+  opacity: 0.5;
+}
+
+.sendButton_container {
+  background-color: var(--primary);
+  border-radius: 24px;
+  margin-left: 16px;
+  right: 10px;
+  height: 48px;
+  width: 48px;
 }
 
 .sendButton {
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  margin: 0;
+  border-radius: 24px;
   outline: none;
-  padding: 0;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 26px;
-  width: 26px;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.disabled {
-  cursor: not-allowed;
-  filter: invert(24%) sepia(3%) saturate(0%) hue-rotate(263deg) brightness(95%)
-    contrast(90%);
+.sendButton:hover {
+  background-color: rgb(255 255 255 / 0.15);
+  cursor: pointer;
 }
 
-.sendButton:hover:not(.disabled) {
-  filter: invert(31%) sepia(75%) saturate(3303%) hue-rotate(200deg)
-    brightness(102%) contrast(105%);
+.sendButton:active:enabled {
+  background-color: var(--primary-dark);
 }
 
-.sendButton:active:not(.disabled) {
-  filter: none;
+.sendButton_container.disabled {
+  background-color: var(--grey-500);
+  opacity: 0.5;
 }
