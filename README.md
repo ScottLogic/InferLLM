@@ -1,6 +1,8 @@
-# InferGPT: your local personalised AI agent
+# InferLLM: your local personalised AI agent
 
-InferGPT's mission is to be an AI that knows you better than your best friend. A system that personalises to who you are and what you care about. We want to build something that can:
+InferLLM was built on top of InferGPT to be decoupled from the underlying model - hence the name change. 
+
+InferLLM's mission is to be an AI that knows you better than your best friend. A system that personalises to who you are and what you care about. We want to build something that can:
 
 🔗 Ingest data about you from various sources (with your permission of course)  
 💡 Have deep and personal conversations without having to answer lots of questions - it will already infer your needs, make personalised recommendations and remember all your conversations.  
@@ -14,11 +16,9 @@ We aim to be able to answer complex questions that require a deep understanding 
 2. I'm trying to lose weight but its not working, why?
 3. I'm learning to code, can you create a tailored learning plan?
 
-## Roadmap & Docs
+## Docs
 
-Want more context about how it works, our roadmap and documentation? Check out the [wiki](https://github.com/WaitThatShouldntWork/InferGPT/wiki)
-
-For further reading on InferGPT's components, see any of the following
+For further reading on InferLLM's components, see any of the following
 
 - [Full system testing](test/README.md)
 - [Data persistence](data/README.md)
