@@ -1,6 +1,6 @@
 # InferLLM: your local personalised AI agent
 
-InferLLM was built on top of InferGPT to be decoupled from the underlying model - hence the name change. 
+InferLLM was built on top of InferGPT to be decoupled from the underlying models - hence the name change. 
 
 InferLLM's mission is to be an AI that knows you better than your best friend. A system that personalises to who you are and what you care about. We want to build something that can:
 
